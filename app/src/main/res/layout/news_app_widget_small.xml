@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    style="@style/Widget.Widgets.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Widgets.AppWidgetContainer">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:maxLines="2"
+        android:text="News title here"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/ivImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@color/light_blue_50" />
+
+</LinearLayout>

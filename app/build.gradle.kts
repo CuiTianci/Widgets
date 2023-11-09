@@ -23,7 +23,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -43,6 +43,7 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
+    implementation(libs.app.widgets)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     testImplementation(libs.junit)

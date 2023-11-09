@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Widgets</string>
+    <string name="des_news_widget">Access the latest news around the world</string>
 </resources>
