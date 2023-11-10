@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.demo.widgets.databinding.ActivityNewsDetailsBinding
-import com.demo.widgets.news.newsList
+import com.demo.widgets.newsList
 
 class NewsDetailsActivity : AppCompatActivity() {
 

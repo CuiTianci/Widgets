@@ -9,8 +9,10 @@ import android.widget.RemoteViews
 import androidx.core.app.PendingIntentCompat
 import androidx.core.util.SizeFCompat
 import androidx.core.widget.updateAppWidget
+import com.demo.widgets.NewsEntity
 import com.demo.widgets.R
 import com.demo.widgets.dLog
+import com.demo.widgets.newsList
 import com.demo.widgets.ui.NewsDetailsActivity
 
 /**

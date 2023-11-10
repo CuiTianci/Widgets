@@ -1,7 +1,6 @@
-package com.demo.widgets.news
+package com.demo.widgets
 
 import androidx.annotation.DrawableRes
-import com.demo.widgets.R
 
 data class NewsEntity(
     @DrawableRes val imageId: Int,

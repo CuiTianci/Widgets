@@ -12,9 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Widgets"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.NewsDetailsActivity"
             android:exported="false" />
+
+        <receiver
+            android:name=".news.stackwidget.NewsStackAppWidget"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/news_stack_app_widget_info" />
+        </receiver>
+
+        <service android:name=".news.stackwidget.NewsStackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
         <receiver
             android:name=".news.NewsAppWidget"
