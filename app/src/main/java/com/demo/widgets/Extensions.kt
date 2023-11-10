@@ -2,10 +2,15 @@ package com.demo.widgets
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.core.content.edit
 
 fun String.dLog(tag: String) {
     Log.d("widgets:$tag", this)
+}
+
+fun Context.toast(msg: String) {
+    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
 
 private const val SP_NAME = "com.demo.widgets.sp"
