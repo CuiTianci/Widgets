@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Widgets</string>
     <string name="des_news_widget">Access the latest news around the world</string>
-    <string name="des_news_stack">Show a stack of several top news</string>
+    <string name="des_news_stack">Show a collection of top news</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>

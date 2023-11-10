@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:configure="com.demo.widgets.widgets.collections.CollectionWidgetConfigActivity"
     android:description="@string/des_news_stack"
-    android:initialLayout="@layout/news_stack_app_widget"
+    android:initialLayout="@layout/news_collection_widget_stack"
     android:maxResizeWidth="570dp"
     android:maxResizeHeight="300dp"
     android:minWidth="140dp"
@@ -9,9 +10,10 @@
     android:minResizeWidth="140dp"
     android:minResizeHeight="110dp"
     android:previewImage="@drawable/news_stack_widget_preview"
-    android:previewLayout="@layout/news_stack_app_widget"
+    android:previewLayout="@layout/news_collection_widget_stack"
     android:resizeMode="horizontal|vertical"
     android:targetCellWidth="3"
     android:targetCellHeight="2"
     android:updatePeriodMillis="0"
-    android:widgetCategory="home_screen" />
+    android:widgetCategory="home_screen"
+    android:widgetFeatures="reconfigurable|configuration_optional" />

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingTop="10dp"
+    tools:context=".widgets.collections.CollectionWidgetConfigActivity">
+
+    <TextView
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Select the type of the collection widget" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <RadioButton
+            android:id="@+id/rbStack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Stack" />
+
+        <RadioButton
+            android:id="@+id/rbFlipper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flipper" />
+
+        <RadioButton
+            android:id="@+id/rbList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List" />
+
+        <RadioButton
+            android:id="@+id/rbGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grid" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Go" />
+
+</LinearLayout>

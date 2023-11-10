@@ -1,4 +1,4 @@
-package com.demo.widgets.news
+package com.demo.widgets.widgets
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -95,7 +95,7 @@ class NewsAppWidget : AppWidgetProvider() {
     private fun populateTopNews(rv: RemoteViews, withContent: Boolean = true) {
         val topNews = topNewsEntity
         rv.setTextViewText(R.id.tvTitle, topNews.title)
-        rv.setImageViewResource(R.id.ivImg, topNews.imageId)
+        rv.setImageViewResource(R.id.item_news_in_collection, topNews.imageId)
         if (withContent) rv.setTextViewText(R.id.tvContent, topNews.content)
     }
 

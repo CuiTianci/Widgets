@@ -14,11 +14,19 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".widgets.collections.CollectionWidgetConfigActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".ui.NewsDetailsActivity"
             android:exported="false" />
 
         <receiver
-            android:name=".news.stackwidget.NewsStackAppWidget"
+            android:name=".widgets.collections.NewsCollectionAppWidget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -26,14 +34,15 @@
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/news_stack_app_widget_info" />
+                android:resource="@xml/news_collection_app_widget_info" />
         </receiver>
 
-        <service android:name=".news.stackwidget.NewsStackWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service
+            android:name=".widgets.collections.NewsCollectionWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <receiver
-            android:name=".news.NewsAppWidget"
+            android:name=".widgets.NewsAppWidget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

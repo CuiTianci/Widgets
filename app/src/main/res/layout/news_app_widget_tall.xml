@@ -17,7 +17,7 @@
         android:textSize="17dp" />
 
     <ImageView
-        android:id="@+id/ivImg"
+        android:id="@+id/item_news_in_collection"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:scaleType="centerCrop"

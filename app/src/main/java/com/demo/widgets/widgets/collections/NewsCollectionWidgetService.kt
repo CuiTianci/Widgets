@@ -1,15 +1,17 @@
-package com.demo.widgets.news.stackwidget
+package com.demo.widgets.widgets.collections
 
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
+import androidx.annotation.LayoutRes
 import com.demo.widgets.R
 import com.demo.widgets.dLog
+import com.demo.widgets.getIntSp
 import com.demo.widgets.newsList
 import com.demo.widgets.ui.NewsDetailsActivity
 
-class NewsStackWidgetService : RemoteViewsService() {
+class NewsCollectionWidgetService : RemoteViewsService() {
 
     private companion object {
         const val TAG = "NewsStackWidgetService"
@@ -17,12 +19,11 @@ class NewsStackWidgetService : RemoteViewsService() {
 
     override fun onGetViewFactory(intent: Intent): RemoteViewsFactory {
         "onGetViewFactory".dLog(TAG)
-        return NewsStackViewsFactory(this.application, intent)
+        return NewsStackViewsFactory(this.application)
     }
 
     class NewsStackViewsFactory(
         private val context: Context,
-        intent: Intent,
     ) : RemoteViewsFactory {
 
         private companion object {
@@ -49,13 +50,13 @@ class NewsStackWidgetService : RemoteViewsService() {
         override fun getViewAt(position: Int): RemoteViews {
             "getViewAt".dLog(TAG)
             val newsEntity = newsList[position]
-            return RemoteViews(context.packageName, R.layout.item_news_in_stack).apply {
+            return RemoteViews(context.packageName, getLayoutId(context)).apply {
                 setTextViewText(R.id.tvTitle, newsEntity.title)
-                setImageViewResource(R.id.ivImg, newsEntity.imageId)
+                setImageViewResource(R.id.item_news_in_collection, newsEntity.imageId)
                 val intent = Intent().apply {
                     putExtra(NewsDetailsActivity.EXTRA_NEWS_INDEX, position)
                 }
-                setOnClickFillInIntent(R.id.bg, intent)
+                setOnClickFillInIntent(R.id.item_news_in_collection, intent)
             }
         }
 
@@ -77,6 +78,16 @@ class NewsStackWidgetService : RemoteViewsService() {
         override fun hasStableIds(): Boolean {
             "hasStableIds".dLog(TAG)
             return true
+        }
+
+        @LayoutRes
+        private fun getLayoutId(context: Context): Int {
+            val collectionTypeSp = context.getIntSp(CollectionType.SP_KEY)
+            val collectionType = CollectionType.valueOf(collectionTypeSp) ?: CollectionType.DEFAULT
+            return when (collectionType) {
+                CollectionType.STACK, CollectionType.FLIPPER -> R.layout.item_news_in_collection
+                CollectionType.LIST, CollectionType.GRID -> R.layout.item_news_in_collection_small
+            }
         }
     }
 }
